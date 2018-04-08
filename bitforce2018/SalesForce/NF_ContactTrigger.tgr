@@ -1,0 +1,7 @@
+trigger NF_ContactTrigger on Account (after insert) {
+	 for(Account a : Trigger.New) {
+        Contact c = new Contact();
+        c.ExternalID__c = a.Id;
+		
+     }   
+}
